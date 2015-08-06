@@ -1,0 +1,16 @@
+---
+
+- name: dev-machine
+  hosts: 127.0.0.1
+  user: kristian
+  sudo: yes
+  vars:
+    git_name: Kristian Bendiksen
+    git_email: kristian.bendiksen@gmail.com
+    git_editor: emacs
+  roles:
+    - virtualbox
+    - vagrant
+    - chromium
+    - emacs
+    - git

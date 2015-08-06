@@ -1,0 +1,9 @@
+---
+
+- name: install packages
+  apt: pkg={{ item }} state=installed
+  tags: virtualbox
+  with_items:
+    - virtualbox
+    - virtualbox-guest-additions-iso
+    - virtualbox-guest-utils

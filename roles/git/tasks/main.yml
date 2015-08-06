@@ -1,0 +1,21 @@
+---
+
+- name: install package
+  apt: pkg=git state=installed
+  tags: git
+
+- name: set user name
+  shell: git config --global user.name "{{ git_name }}"
+  sudo: no
+
+- name: set user email
+  shell: git config --global user.email {{ git_email }}
+  sudo: no
+
+- name: set editor
+  shell: git config --global core.editor {{ git_editor }}
+  sudo: no
+
+- name: set push strategy
+  shell: git config --global push.default simple
+  sudo: no
