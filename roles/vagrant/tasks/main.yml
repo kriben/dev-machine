@@ -1,5 +1,8 @@
 ---
 
 - name: install package
-  apt: pkg=vagrant state=installed
+  apt: pkg={{ item }} state=installed
   tags: vagrant
+  with_items:
+    - vagrant
+    - nfs-kernel-server
